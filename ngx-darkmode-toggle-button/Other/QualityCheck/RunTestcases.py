@@ -1,11 +1,9 @@
-import os
-import sys
-from pathlib import Path
-from ScriptCollection.TasksForCommonProjectStructure import TasksForCommonProjectStructure
+from ScriptCollection.TFCPS.NodeJS.TFCPS_CodeUnitSpecific_NodeJS import TFCPS_CodeUnitSpecific_NodeJS_Functions,TFCPS_CodeUnitSpecific_NodeJS_CLI
 
 
 def run_testcases():
-    TasksForCommonProjectStructure().standardized_tasks_run_testcases_for_node_project_in_common_project_structure(str(Path(__file__).absolute()), 1, sys.argv)
+    tf:TFCPS_CodeUnitSpecific_NodeJS_Functions=TFCPS_CodeUnitSpecific_NodeJS_CLI.parse(__file__)
+    tf.run_testcases()
 
 
 if __name__ == "__main__":

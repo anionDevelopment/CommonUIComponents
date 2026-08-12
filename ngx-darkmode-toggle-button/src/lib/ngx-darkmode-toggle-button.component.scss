@@ -1,0 +1,6 @@
+/* The colors are taken from the system-tokens of the theme, so they follow the chosen color-scheme without any
+   further code. A hard-coded color would stay as it is when the scheme changes. */
+:host {
+  display: inline-block;
+  color: var(--mat-sys-on-surface);
+}
