@@ -18,8 +18,8 @@ The three modes are visible at the same time and the active one is highlighted. 
 
 ## Requirements
 
-- Angular 19
-- Angular Material 19 (the component uses the Material-3-theming-API and the system-tokens `--mat-sys-*`)
+- Angular 22
+- Angular Material 22 (the component uses the Material-3-theming-API and the system-tokens `--mat-sys-*`)
 - An icon-font which is provided by the application, see step 3 of the usage. This package deliberately does not bring one: which icon-font an application uses is its own decision, and a second one would only add weight.
 
 ## Installation
@@ -95,7 +95,6 @@ import { NgxDarkmodeToggleButtonComponent } from '@aniondev/ngx-darkmode-toggle-
 
 @Component({
   selector: 'app-toolbar',
-  standalone: true,
   imports: [NgxDarkmodeToggleButtonComponent],
   template: `<ngx-darkmode-toggle-button />`,
 })
