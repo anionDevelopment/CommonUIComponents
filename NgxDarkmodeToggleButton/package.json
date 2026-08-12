@@ -1,6 +1,6 @@
 {
   "name": "@aniondev/ngx-darkmode-toggle-button",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "An angular-component which lets the user choose between the color-schemes system, light and dark.",
   "scripts": {
     "build": "npm run build-QualityCheck",
