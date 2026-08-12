@@ -13,23 +13,23 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
-      jasmine: {},
-      clearContext: false
+      jasmine: {
+      },
     },
     jasmineHtmlReporter: {
-      suppressAll: true
+      suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './Other/Artifacts/TestCoverage'),
+      dir: require('path').join(__dirname, './coverage/ngx-darkmode-toggle-button'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
-        { type: 'text-summary' },
-        { type: 'cobertura' }
+        // The pipeline picks the coverage-file up from this folder, see Other/QualityCheck/RunTestcases.py.
+        { type: 'cobertura', dir: './Other/Artifacts/TestCoverage' },
+        'progress'
       ]
     },
     reporters: ['progress', 'kjhtml'],
     browsers: ['Chrome'],
-    restartOnFileChange: true
+    restartOnFileChange: false,
   });
 };

@@ -1,8 +1,4 @@
-<mat-button-toggle-group
-  hideSingleSelectionIndicator
-  [value]="service.mode()"
-  (change)="onModeChanged($event)"
-  [attr.aria-label]="ariaLabel()">
+<mat-button-toggle-group hideSingleSelectionIndicator [value]="service.mode()" (change)="onModeChanged($event)" [attr.aria-label]="ariaLabel()">
   <mat-button-toggle value="light" [attr.aria-label]="lightLabel()">
     <mat-icon>light_mode</mat-icon>
   </mat-button-toggle>

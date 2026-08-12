@@ -1,13 +1,79 @@
 {
-	"folders": [
-		{
-			"path": ".",
-			"name": "All",
-		},
-		{
-			"path": "./ngx-darkmode-toggle-button",
-			"name": "ngx-darkmode-toggle-button"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": ".",
+      "name": "Entire repository"
+    }
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Base: Build all codeunits",
+        "command": "scbuildcodeunits",
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "aliases": [
+          "bb"
+        ],
+        "allowcustomarguments": true
+      },
+      {
+        "label": "Update: Visual-regression-baselines",
+        "command": "python UpdateVisualRegressionBaselines.py",
+        "args": [],
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder}/NgxDarkmodeToggleButton/Other/QualityCheck"
+        },
+        "aliases": [
+          "uvrb"
+        ],
+        "allowcustomarguments": true
+      },
+      {
+        "label": "Run: Demo",
+        "command": "npm run start",
+        "args": [],
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder}/NgxDarkmodeToggleButton"
+        },
+        "aliases": [
+          "rd"
+        ],
+        "allowcustomarguments": true
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug current file",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal"
+      }
+    ]
+  },
+  "settings": {
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "window.title": "${dirty} ${rootName}",
+    "files.exclude": {
+      ".coverage": true,
+      "TestResults": true,
+      ".vs": true
+    },
+    "spellright.language": [
+      "en"
+    ],
+    "spellright.documentTypes": [
+      "markdown",
+      "plaintext"
+    ]
+  }
 }

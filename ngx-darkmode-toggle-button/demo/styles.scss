@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+
+/*
+ * This is the whole theming of an application which uses this package: "mat.theme" is included exactly once and
+ * the three modes are expressed by the css-property "color-scheme". There is deliberately no second theme and
+ * nothing is exchanged at runtime.
+ */
+html {
+  color-scheme: light dark; // this is the mode "system"
+  @include mat.theme((color: mat.$azure-palette, typography: Roboto, density: 0));
+
+  &[data-theme='light'] {
+    color-scheme: light;
+  }
+
+  &[data-theme='dark'] {
+    color-scheme: dark;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
+  font-family: var(--mat-sys-body-medium-font, Roboto, sans-serif);
+}

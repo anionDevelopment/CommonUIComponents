@@ -1,17 +1,18 @@
 {
   "name": "@aniondev/ngx-darkmode-toggle-button",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "An angular-component which lets the user choose between the color-schemes system, light and dark.",
   "scripts": {
     "build": "npm run build-QualityCheck",
-    "build-Development": "ng build --configuration Development",
-    "build-QualityCheck": "ng build --configuration QualityCheck",
-    "build-Productive": "ng build --configuration Productive",
+    "build-Development": "ng build ngx-darkmode-toggle-button --configuration Development",
+    "build-Productive": "ng build ngx-darkmode-toggle-button --configuration Productive",
+    "build-QualityCheck": "ng build ngx-darkmode-toggle-button --configuration QualityCheck",
+    "lint": "ng lint",
+    "start": "ng serve demo --configuration Development --host 0.0.0.0 --live-reload=false --disable-host-check",
     "test": "npm run test-QualityCheck",
-    "test-Development": "ng test --browsers ChromeHeadless --watch false",
-    "test-QualityCheck": "ng test --browsers ChromeHeadless --watch false",
-    "test-Productive": "ng test --browsers ChromeHeadless --watch false",
-    "lint": "ng lint"
+    "test-Development": "ng test ngx-darkmode-toggle-button --configuration Development --browsers ChromeHeadless --watch false",
+    "test-Productive": "ng test ngx-darkmode-toggle-button --configuration Productive --browsers ChromeHeadless --watch false",
+    "test-QualityCheck": "ng test ngx-darkmode-toggle-button --configuration QualityCheck --browsers ChromeHeadless --watch false"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "@angular/cdk": "^19.2.0",
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
     "@angular/material": "^19.2.0"
   },
   "dependencies": {
@@ -49,15 +51,18 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "19.2.0",
+    "@angular/animations": "19.2.0",
     "@angular/cdk": "19.2.1",
     "@angular/cli": "19.2.0",
     "@angular/common": "19.2.0",
     "@angular/compiler": "19.2.0",
     "@angular/compiler-cli": "19.2.0",
     "@angular/core": "19.2.0",
+    "@angular/forms": "19.2.0",
     "@angular/material": "19.2.1",
     "@angular/platform-browser": "19.2.0",
     "@angular/platform-browser-dynamic": "19.2.0",
+    "@playwright/test": "1.62.1",
     "@types/jasmine": "5.1.7",
     "angular-eslint": "19.2.0",
     "eslint": "9.21.0",
