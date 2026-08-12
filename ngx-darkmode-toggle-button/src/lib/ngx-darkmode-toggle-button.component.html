@@ -1,0 +1,15 @@
+<mat-button-toggle-group
+  hideSingleSelectionIndicator
+  [value]="service.mode()"
+  (change)="onModeChanged($event)"
+  [attr.aria-label]="ariaLabel()">
+  <mat-button-toggle value="light" [attr.aria-label]="lightLabel()">
+    <mat-icon>light_mode</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="system" [attr.aria-label]="systemLabel()">
+    <mat-icon>computer</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="dark" [attr.aria-label]="darkLabel()">
+    <mat-icon>dark_mode</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>

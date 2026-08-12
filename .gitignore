@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+Other/Resources/Artifacts
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/*.lock
+Other/Logs

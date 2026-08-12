@@ -1,3 +1,5 @@
-# darkmode-toggle-button-reference
+# ngx-darkmode-toggle-button-reference
 
-TODO
+## Hints for developers
+
+See the [hints](./Hints.md).
