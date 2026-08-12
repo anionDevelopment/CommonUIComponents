@@ -1,4 +1,4 @@
-# ngx-darkmode-toggle-button
+# NgxDarkmodeToggleButton
 
 ## Purpose
 
