@@ -1,0 +1,12 @@
+@startuml CodeUnits-Overview
+skinparam defaultFontName "DejaVu Sans"
+title CodeUnits of NgxDarkmodeToggleButton
+
+[NgxDarkmodeToggleButton]
+note as NgxDarkmodeToggleButtonNote
+  ngx-darkmode-toggle-button is an angular-component which lets the user choose between the color-schemes system, light and dark.
+end note
+NgxDarkmodeToggleButton .. NgxDarkmodeToggleButtonNote
+
+
+@enduml

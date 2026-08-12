@@ -1,27 +1,19 @@
+<!DOCTYPE html>
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>ngx-darkmode-toggle-button</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--
+  <head>
+    <meta charset="utf-8">
+    <title>ngx-darkmode-toggle-button</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
     This script applies the stored mode before the first frame is drawn. Without it the page would be visible in
     the wrong color-scheme for a moment after a reload. It deliberately duplicates the logic of NgxDarkmodeService,
     because the attribute has to be set before the application is bootstrapped.
   -->
-  <script>
-    var storedThemeMode = localStorage.getItem('theme');
-    if (storedThemeMode && storedThemeMode !== 'system') {
-      document.documentElement.setAttribute('data-theme', storedThemeMode);
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
-
-<body>
-  <ngx-demo></ngx-demo>
-</body>
-
+    <script>var storedThemeMode = localStorage.getItem('theme'); if (storedThemeMode && storedThemeMode !== 'system') { document.documentElement.setAttribute('data-theme', storedThemeMode); }</script>
+  </head>
+  <body>
+    <ngx-demo></ngx-demo>
+  </body>
 </html>
