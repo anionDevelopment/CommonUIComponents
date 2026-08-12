@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { afterNextRender, effect, inject, Injectable, signal } from '@angular/core';
+import { afterNextRender, effect, inject, Injectable, signal, DOCUMENT } from '@angular/core';
 
 /** The setting the user chose. It is not the scheme which is displayed: in the mode "system" that is decided by the operating-system. */
 export type ThemeMode = 'system' | 'light' | 'dark';
