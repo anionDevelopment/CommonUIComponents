@@ -1,0 +1,14 @@
+<div [ngClass]="{'lightmode': currentDesign.value === 'light', 'darkmode' : currentDesign.value === 'dark' }">
+  <form [formGroup]="formGroup">
+    <mat-form-field class>
+      <mat-select [formControl]="currentDesign">
+        <mat-select-trigger>
+          <app-design-presenter [design]="currentDesign.value"></app-design-presenter>
+        </mat-select-trigger>
+        <mat-option *ngFor="let design of designs" [value]="design">
+          <app-design-presenter [design]="design"></app-design-presenter>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>

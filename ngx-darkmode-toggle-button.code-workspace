@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "All",
+		},
+		{
+			"path": "./ngx-darkmode-toggle-button",
+			"name": "ngx-darkmode-toggle-button"
+		}
+	],
+	"settings": {}
+}
