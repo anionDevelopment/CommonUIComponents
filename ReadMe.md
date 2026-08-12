@@ -10,12 +10,21 @@ Apps, web-sites and web-applications usually have a light- and a dark-appearance
 
 A two-state toggle can not express that: it only knows "light" and "dark" and therefore loses exactly the mode which most users want. This component therefore offers all three modes at the same time, each of them reachable with one click.
 
+## Example
+
+![The component in the mode light](Other/Reference/Technical/Images/ThemeSwitcher.png)
+
+The three modes are visible at the same time and the active one is highlighted. In the mode `dark` the same page is dark and the third button is the highlighted one.
+
 ## Requirements
 
 - Angular 19
 - Angular Material 19 (the component uses the Material-3-theming-API and the system-tokens `--mat-sys-*`)
+- An icon-font which is provided by the application, see step 3 of the usage. This package deliberately does not bring one: which icon-font an application uses is its own decision, and a second one would only add weight.
 
 ## Installation
+
+The package is published at [npmjs.com/package/@aniondev/ngx-darkmode-toggle-button](https://www.npmjs.com/package/@aniondev/ngx-darkmode-toggle-button).
 
 ```
 npm install @aniondev/ngx-darkmode-toggle-button
@@ -59,7 +68,24 @@ Without this the page is drawn in the wrong scheme for a moment after a reload. 
 
 The duplication of that logic is intended: the attribute has to be set before the application is bootstrapped.
 
-### 3. Use the component
+### 3. Provide an icon-font
+
+The component shows its three modes as icons of the font `Material Icons` (`light_mode`, `computer` and `dark_mode`). The font is provided by the application, not by this package.
+
+If the font is loaded from a font-provider then its stylesheet usually already assigns the font to the elements. If it is delivered with the application (which makes the appearance independent of an external service) then the assignment has to be made once, because the font-package only contains the font itself:
+
+```scss
+mat-icon {
+  font-family: 'Material Icons';
+  font-size: 24px;
+  line-height: 1;
+  font-feature-settings: 'liga';
+}
+```
+
+Without this an icon is displayed as the text of its name instead of as a symbol.
+
+### 4. Use the component
 
 The component is standalone, so it is imported directly by the component which shows it:
 
@@ -86,7 +112,7 @@ The labels can be replaced, for example by translated texts:
   darkLabel="Dunkel" />
 ```
 
-### 4. Read or set the mode from code
+### 5. Read or set the mode from code
 
 The chosen mode is available as a signal, so it can be read and written from anywhere - for example to store it in the profile of the user:
 
@@ -124,10 +150,6 @@ The mode is stored in the `localStorage` under the key `theme`. A missing or an 
 
 With server-side-rendering or prerendering neither `localStorage` nor `window` is touched while the service is constructed: the stored value is read in `afterNextRender`.
 
-## Demo
-
-TODO
-
 ## Development
 
 This repository implements the common project structure. The whole pipeline (build, linting, testcases) runs with:
@@ -135,6 +157,8 @@ This repository implements the common project structure. The whole pipeline (bui
 ```
 task bb
 ```
+
+The repository contains a small demo-application which shows the component (it is not part of the published package). It is started with `task rd` and it is also what the visual-regression-tests take their screenshots of. After an intended change of the appearance the baseline-screenshots are regenerated with `task uvrb`.
 
 ## License
 

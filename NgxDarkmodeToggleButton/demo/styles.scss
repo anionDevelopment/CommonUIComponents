@@ -24,3 +24,22 @@ body {
   color: var(--mat-sys-on-background);
   font-family: var(--mat-sys-body-medium-font, Roboto, sans-serif);
 }
+
+/*
+ * The icon-font is delivered by the application and not by this package, so the application also has to assign
+ * it. The "@fontsource"-package only contains the font itself, while the stylesheet of a font-provider usually
+ * also brings this rule. Without it an icon is displayed as the text of its ligature-name.
+ */
+mat-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+}

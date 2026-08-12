@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { afterNextRender, Injectable, effect, inject, signal } from '@angular/core';
+import { afterNextRender, effect, inject, Injectable, signal } from '@angular/core';
 
 /** The setting the user chose. It is not the scheme which is displayed: in the mode "system" that is decided by the operating-system. */
 export type ThemeMode = 'system' | 'light' | 'dark';
@@ -27,12 +27,26 @@ export class NgxDarkmodeService {
   /** The mode the user chose. Write to it to change the mode. */
   public readonly mode = signal<ThemeMode>('system');
 
+  /** Whether the stored mode was loaded already. Before that the value of "mode" is only the default. */
+  private readonly persistedModeWasRead = signal<boolean>(false);
+
   public constructor() {
-    // The browser-api is only available after the first render: with server-side-rendering or prerendering there
-    // is neither a localStorage nor a window while the component is constructed.
+    // The effect is created here and not inside the callback below, because an effect can only be created in an
+    // injection-context. Everything it touches is guarded, so it also works with server-side-rendering.
+    effect(() => {
+      const mode: ThemeMode = this.mode();
+      // Nothing is applied and nothing is stored before the stored mode was read. Otherwise the default would
+      // overwrite the choice of a returning user in the storage before that choice was even loaded, which would
+      // reset the mode to "system" on every reload of the page.
+      if (this.persistedModeWasRead()) {
+        this.applyMode(mode);
+      }
+    });
+    // Reading the stored mode needs the browser-api, which does not exist while the application is rendered on
+    // a server. Therefore it happens after the first render and not in the constructor.
     afterNextRender(() => {
       this.mode.set(this.readPersistedMode());
-      effect(() => this.applyMode(this.mode()));
+      this.persistedModeWasRead.set(true);
     });
   }
 
@@ -47,7 +61,14 @@ export class NgxDarkmodeService {
   }
 
   private applyMode(mode: ThemeMode): void {
-    this.document.defaultView?.localStorage?.setItem(themeModeStorageKey, mode);
+    // With server-side-rendering or prerendering there is no window, so there is neither a storage to write to
+    // nor a document whose change would reach the user. The mode is applied again as soon as the page is alive
+    // in the browser.
+    const window: Window | null = this.document.defaultView;
+    if (window === null) {
+      return;
+    }
+    window.localStorage.setItem(themeModeStorageKey, mode);
     if (mode === 'system') {
       this.document.documentElement.removeAttribute('data-theme');
     } else {
