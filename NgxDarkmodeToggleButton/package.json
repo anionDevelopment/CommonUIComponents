@@ -32,7 +32,7 @@
     "design",
     "ui"
   ],
-  "author": "Marius G\u00f6cke <marius.goecke@gmail.com>",
+  "author": "Marius Göcke <marius.goecke@gmail.com>",
   "license": "ISC",
   "private": false,
   "publishConfig": {
@@ -40,11 +40,11 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@angular/cdk": "19.2.0",
+    "@angular/cdk": "19.2.1",
     "@angular/common": "19.2.0",
     "@angular/core": "19.2.0",
     "@angular/forms": "19.2.0",
-    "@angular/material": "19.2.0"
+    "@angular/material": "19.2.1"
   },
   "dependencies": {
     "tslib": "2.8.1"
