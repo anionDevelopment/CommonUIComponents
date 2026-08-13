@@ -2,3 +2,4 @@ Artifacts
 Resources/Constants
 Resources/TestCoverageBadges/*
 !Resources/TestCoverageBadges/badge_shieldsio_linecoverage_blue.svg
+Resources/Constants/CurrentTimestamp.*
