@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+
+  BaseBuildAllCodeunits:
+    desc: "Base: Build all codeunits"
+    silent: true
+    dir: "."
+    cmds:
+      - "scbuildcodeunits {{.CLI_ARGS}}"
+    aliases:
+      - basebuildallcodeunits
+      - bb
+
+  RunDemo:
+    desc: "Run: Demo"
+    silent: true
+    dir: "./NgxCultureSelector"
+    cmds:
+      - "npm run start {{.CLI_ARGS}}"
+    aliases:
+      - rundemo
+      - rd
