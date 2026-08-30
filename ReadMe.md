@@ -159,6 +159,8 @@ task bb
 
 The repository contains a small demo-application which shows the component (it is not part of the published package). It is started with `task rd` and it is also what the visual-regression-tests take their screenshots of. After an intended change of the appearance the baseline-screenshots are regenerated with `task uvrb`.
 
+> **Note:** The script `NgxDarkmodeToggleButton/Other/QualityCheck/UpdateVisualRegressionBaselines.py` is permitted to modify files in the `<repo>/Other` directory, specifically to update the readme example image at `Other/Reference/Technical/Images/ThemeSwitcher.png` to always show the current appearance of the component.
+
 ## License
 
 See `License.txt`.
