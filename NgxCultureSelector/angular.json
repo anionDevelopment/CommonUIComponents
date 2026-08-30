@@ -1,0 +1,149 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "analytics": false,
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-culture-selector": {
+      "projectType": "library",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "ng-package.json"
+          },
+          "configurations": {
+            "Development": {
+              "tsConfig": "tsconfig.lib.json"
+            },
+            "QualityCheck": {
+              "tsConfig": "tsconfig.lib.prod.json"
+            },
+            "Productive": {
+              "tsConfig": "tsconfig.lib.prod.json"
+            }
+          },
+          "defaultConfiguration": "Productive"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "codeCoverage": true,
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "karmaConfig": "karma.conf.js"
+          },
+          "configurations": {
+            "Development": {},
+            "QualityCheck": {},
+            "Productive": {}
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo": {
+      "projectType": "application",
+      "root": "demo",
+      "sourceRoot": "demo",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "Other/Artifacts/BuildResult_Demo",
+            "index": "demo/index.html",
+            "browser": "demo/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "styles": [
+              "node_modules/@fontsource/roboto/400.css",
+              "node_modules/@fontsource/roboto/500.css",
+              "demo/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "Development": {
+              "optimization": false,
+              "sourceMap": true
+            },
+            "QualityCheck": {
+              "optimization": false,
+              "sourceMap": true
+            },
+            "Productive": {
+              "optimization": true,
+              "outputHashing": "all"
+            }
+          },
+          "defaultConfiguration": "Productive"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "Development": {
+              "buildTarget": "demo:build:Development"
+            },
+            "QualityCheck": {
+              "buildTarget": "demo:build:QualityCheck"
+            },
+            "Productive": {
+              "buildTarget": "demo:build:Productive"
+            }
+          },
+          "defaultConfiguration": "Development"
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>{{ label() }}</mat-label>
+  <mat-select [value]="selectedCulture()" (selectionChange)="onSelectionChange($event)">
+    @for (culture of cultures(); track culture) {
+      <mat-option [value]="culture">{{ culture }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
