@@ -141,7 +141,7 @@ export class SettingsComponent {
 
 | Mode | Attribute `data-theme` | `color-scheme` | Result |
 | --- | --- | --- | --- |
-| `system` | not set | `light dark` | follows the operating-system, also while the application is running |
+| `system` | not set | `light dark` | follows the operating-system-theme |
 | `light` | `light` | `light` | always light, the operating-system is ignored |
 | `dark` | `dark` | `dark` | always dark, the operating-system is ignored |
 
