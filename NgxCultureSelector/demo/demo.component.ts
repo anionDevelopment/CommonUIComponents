@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgxCultureSelectorComponent } from '../src/public-api';
+import { NgxCultureOption, NgxCultureSelectorComponent } from '../src/public-api';
 
 /**
  * The application which is used to look at the component. It is not part of the published package.
@@ -14,7 +14,12 @@ import { NgxCultureSelectorComponent } from '../src/public-api';
 })
 export class DemoComponent {
 
-  protected readonly cultures: string[] = ['en-GB', 'de', 'de-AT', 'fr'];
+  protected readonly cultures: NgxCultureOption[] = [
+    { culture: 'en-GB', label: 'English (UK)' },
+    { culture: 'de', label: 'German' },
+    { culture: 'de-AT', label: 'German (Austria)' },
+    { culture: 'fr', label: 'French' },
+  ];
 
   protected chosenCulture: string | undefined;
 

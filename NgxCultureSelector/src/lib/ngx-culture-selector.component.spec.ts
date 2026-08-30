@@ -1,51 +1,56 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { OverlayContainer } from '@angular/cdk/overlay';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HarnessLoader } from '@angular/cdk/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { MatSelectHarness } from '@angular/material/select/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxCultureSelectorComponent } from './ngx-culture-selector.component';
+import { NgxCultureOption, NgxCultureSelectorComponent } from './ngx-culture-selector.component';
 
 describe('NgxCultureSelectorComponent', () => {
 
+  const cultures: NgxCultureOption[] = [
+    { culture: 'en-GB', label: 'English (UK)' },
+    { culture: 'de', label: 'German' },
+    { culture: 'de-AT', label: 'German (Austria)' },
+    { culture: 'fr', label: 'French' },
+  ];
+
   let fixture: ComponentFixture<NgxCultureSelectorComponent>;
-  let overlayContainer: OverlayContainer;
+  let loader: HarnessLoader;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [NgxCultureSelectorComponent, NoopAnimationsModule],
     }).compileComponents();
     fixture = TestBed.createComponent(NgxCultureSelectorComponent);
-    fixture.componentRef.setInput('cultures', ['en-GB', 'de', 'de-AT', 'fr']);
-    overlayContainer = TestBed.inject(OverlayContainer);
+    fixture.componentRef.setInput('cultures', cultures);
     fixture.detectChanges();
+    loader = TestbedHarnessEnvironment.loader(fixture);
   });
 
-  afterEach(() => {
-    overlayContainer.ngOnDestroy();
+  it('lists the label of every provided culture as an option', async () => {
+    const select: MatSelectHarness = await loader.getHarness(MatSelectHarness);
+    await select.open();
+
+    const options = await select.getOptions();
+    const labels: string[] = await Promise.all(options.map((option) => option.getText()));
+    expect(labels).toEqual(cultures.map((culture) => culture.label));
   });
 
-  it('lists every provided culture as an option', fakeAsync(() => {
-    const trigger: HTMLElement = fixture.nativeElement.querySelector('.mat-mdc-select-trigger');
-    trigger.click();
+  it('shows the label of the preselected culture in the trigger', async () => {
+    fixture.componentRef.setInput('selectedCulture', 'de-AT');
     fixture.detectChanges();
-    tick();
 
-    const options: NodeListOf<HTMLElement> = overlayContainer.getContainerElement().querySelectorAll('mat-option');
-    expect(options.length).toBe(4);
-  }));
+    const select: MatSelectHarness = await loader.getHarness(MatSelectHarness);
+    expect(await select.getValueText()).toBe('German (Austria)');
+  });
 
-  it('emits the culture the user chose', fakeAsync(() => {
+  it('emits the culture-identifier of the culture the user chose', async () => {
     const chosenCultures: string[] = [];
     fixture.componentInstance.cultureSelected.subscribe((culture: string) => chosenCultures.push(culture));
 
-    const trigger: HTMLElement = fixture.nativeElement.querySelector('.mat-mdc-select-trigger');
-    trigger.click();
-    fixture.detectChanges();
-    tick();
-
-    const options: NodeListOf<HTMLElement> = overlayContainer.getContainerElement().querySelectorAll('mat-option');
-    options[2].click();
-    fixture.detectChanges();
-    tick();
+    const select: MatSelectHarness = await loader.getHarness(MatSelectHarness);
+    await select.clickOptions({ text: 'German (Austria)' });
 
     expect(chosenCultures).toEqual(['de-AT']);
-  }));
+  });
 });
