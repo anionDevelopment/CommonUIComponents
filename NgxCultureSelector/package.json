@@ -1,6 +1,6 @@
 {
   "name": "@aniondev/ngx-culture-selector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An angular-component which lets the user choose a culture from a configurable list of cultures.",
   "scripts": {
     "build": "npm run build-QualityCheck",
