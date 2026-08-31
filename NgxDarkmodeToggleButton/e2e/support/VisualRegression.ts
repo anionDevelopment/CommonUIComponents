@@ -1,4 +1,5 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Locator, Page, test } from '@playwright/test';
+import * as path from 'path';
 
 /*
  * The font which the demo-application uses. A page which is rendered before its font is available looks
@@ -7,6 +8,56 @@ import { expect, Page } from '@playwright/test';
  * clear message instead of with a difference which would look like a regression of the user-interface.
  */
 const requiredFont: string = '16px Roboto';
+
+interface Box {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}
+
+/*
+ * The folder the reference-images for the readme are written to. It has to be inside the codeunit-folder because
+ * the visual-regression-tests run in a container which only has that folder mounted; the update-script (see
+ * "Other/QualityCheck/UpdateVisualRegressionBaselines.py") copies the images from here into the repository-level
+ * "Other/Reference/Technical/Images" afterwards. The folder is part of "Other/Artifacts" and is therefore ignored
+ * by git, exactly like the other output of the visual-regression-tests.
+ */
+const referenceImagesFolder: string = path.join('Other', 'Artifacts', 'ReferenceImages');
+
+/*
+ * Returns the bounding box of the given area, or throws if it has none because it is not visible.
+ */
+async function boundingBoxOf(area: Locator, description: string): Promise<Box> {
+    const box: Box | null = await area.boundingBox();
+    if (box === null) {
+        throw new Error(`Could not determine the bounding box of ${description}: it is not visible.`);
+    }
+    return box;
+}
+
+/*
+ * Writes an unconditional, uncompared screenshot of the given area into "referenceImagesFolder", from where the
+ * update-script picks it up for the readme. This is deliberately not a visual-regression-test: nothing here is
+ * compared with a baseline, the file is simply overwritten with the current appearance.
+ *
+ * It only happens on chromium and only while the baselines are being regenerated ("--update-snapshots"): the
+ * readme-picture is meant to always show one specific, reproducible rendering-engine, and a normal test-run
+ * (which also executes on firefox and webkit) must not touch a file which only the update-script owns.
+ */
+async function saveReferenceImage(page: Page, name: string, area: Box): Promise<void> {
+    const testInfo = test.info();
+    /*
+     * "updateSnapshots" defaults to "missing" (only write a baseline which does not exist yet) when the tests run
+     * normally; it is only "all" or "changed" when "--update-snapshots" was passed explicitly, which is exactly
+     * the run "task uvrb" performs. Without this check every normal test-run would overwrite the reference-image.
+     */
+    const baselinesAreBeingUpdated: boolean = testInfo.config.updateSnapshots === 'all' || testInfo.config.updateSnapshots === 'changed';
+    if (testInfo.project.name !== 'chromium' || !baselinesAreBeingUpdated) {
+        return;
+    }
+    await page.screenshot({ path: path.join(referenceImagesFolder, `${name}.png`), clip: area });
+}
 
 /*
  * Opens the demo-application in the given mode and compares the resulting screenshot with the baseline of the
@@ -41,8 +92,9 @@ export async function expectDemoToLookLikeBaseline(page: Page, mode: string, bas
     await page.waitForFunction((font: string) => document.fonts.check(font), requiredFont);
 
     /* The component has to be there. Without this check an empty page would become the baseline. */
+    const component: Locator = page.locator('ngx-darkmode-toggle-button');
     try {
-        await expect(page.locator('ngx-darkmode-toggle-button')).toBeVisible();
+        await expect(component).toBeVisible();
     } catch {
         /* A missing component is only the symptom. What is needed to fix it is what the page itself reported. */
         const bodyOfPage: string = await page.evaluate(() => document.body.innerHTML);
@@ -60,6 +112,8 @@ export async function expectDemoToLookLikeBaseline(page: Page, mode: string, bas
         storedMode: window.localStorage.getItem('theme')
     }));
     expect(stateOfDocument).toEqual({ appliedMode: mode === 'system' ? null : mode, storedMode: mode });
+
+    await saveReferenceImage(page, baselineName, await boundingBoxOf(component, 'the theme-switcher'));
 
     await expect(page).toHaveScreenshot(`${baselineName}.png`, {
         fullPage: true,

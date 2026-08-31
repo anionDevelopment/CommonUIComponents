@@ -12,7 +12,8 @@ A two-state toggle can not express that: it only knows "light" and "dark" and th
 
 ## Example
 
-![The component in the mode light](Other/Reference/Technical/Images/ThemeSwitcher.png)
+![The component in the mode light](Other/Reference/Technical/Images/ThemeSwitcherLight.png)
+![The component in the mode dark](Other/Reference/Technical/Images/ThemeSwitcherDark.png)
 
 The three modes are visible at the same time and the active one is highlighted. In the mode `dark` the same page is dark and the third button is the highlighted one.
 
@@ -158,8 +159,6 @@ task bb
 ```
 
 The repository contains a small demo-application which shows the component (it is not part of the published package). It is started with `task rd` and it is also what the visual-regression-tests take their screenshots of. After an intended change of the appearance the baseline-screenshots are regenerated with `task uvrb`.
-
-> **Note:** The script `NgxDarkmodeToggleButton/Other/QualityCheck/UpdateVisualRegressionBaselines.py` is permitted to modify files in the `<repo>/Other` directory, specifically to update the readme example image at `Other/Reference/Technical/Images/ThemeSwitcher.png` to always show the current appearance of the component.
 
 ## License
 
