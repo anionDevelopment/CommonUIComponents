@@ -10,7 +10,8 @@ Applications which are available in several languages or regional variants usual
 
 ## Example
 
-![The component with its dropdown open, listing the four cultures of the example above](Other/Reference/Technical/Images/CultureSelector.png)
+![The component closed, showing the currently chosen culture](Other/Reference/Technical/Images/CultureSelectorClosed.png)
+![The component with its dropdown open, listing the four cultures of the example above](Other/Reference/Technical/Images/CultureSelectorOpen.png)
 
 The trigger always shows the label of the currently chosen culture. Clicking it opens a dropdown which lists the label of every culture that was passed in - this is the native behavior of the underlying `mat-select` and needs no further code.
 
@@ -89,8 +90,6 @@ task bb
 ```
 
 The repository contains a small demo-application which shows the component (it is not part of the published package). It is started with `task rd` and it is also what the visual-regression-tests take their screenshots of. After an intended change of the appearance the baseline-screenshots are regenerated with `task uvrb`.
-
-> **Note:** The script `NgxCultureSelector/Other/QualityCheck/UpdateVisualRegressionBaselines.py` is permitted to modify files in the `<repo>/Other` directory, specifically to update the readme example image at `Other/Reference/Technical/Images/CultureSelector.png` to always show the current appearance of the component.
 
 ## License
 
