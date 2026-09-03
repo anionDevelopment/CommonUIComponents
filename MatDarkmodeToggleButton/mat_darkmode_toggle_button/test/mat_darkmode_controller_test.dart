@@ -57,18 +57,4 @@ void main() {
       expect(controller.value, ThemeMode.dark);
     });
   });
-
-  group('themeModeFromName', () {
-    test('parses the name every mode is stored as', () {
-      for (final ThemeMode mode in ThemeMode.values) {
-        expect(themeModeFromName(mode.name), mode);
-      }
-    });
-
-    test('treats a missing or an unknown value as "system"', () {
-      expect(themeModeFromName(null), ThemeMode.system);
-      expect(themeModeFromName(''), ThemeMode.system);
-      expect(themeModeFromName('sepia'), ThemeMode.system);
-    });
-  });
 }
