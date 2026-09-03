@@ -3,7 +3,7 @@
   <name>NgxCultureSelector</name>
   <version>0.1.1</version>
   <codeunitownername>Marius Göcke</codeunitownername>
-  <codeunitowneremailaddress>marius.goecke@mailbox.org</codeunitowneremailaddress>
+  <codeunitowneremailaddress>marius.goecke@gmail.com</codeunitowneremailaddress>
   <properties codeunithastestablesourcecode="true" codeunithasupdatabledependencies="true" throwexceptionifcodeunitfilecannotbevalidated="false" developmentstate="Active development" description="ngx-culture-selector is an angular-component which lets the user choose a culture from a configurable list of cultures.">
     <testsettings minimalcodecoverageinpercent="1" />
     <pipelinedemands />
