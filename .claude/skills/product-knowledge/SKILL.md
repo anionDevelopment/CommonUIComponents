@@ -67,7 +67,12 @@ not detect. They run inside a container (see `Other/QualityCheck/VisualRegressio
 rendering-result otherwise depends on the operating-system, and they are skipped by a plain `flutter test` (see
 `dart_test.yaml`) for exactly that reason.
 
-The build creates the folder which is published to pub.dev (`Other/Artifacts/BuildResult_PubPackage`) and verifies
-it with `dart pub publish --dry-run`. The readme, the license and the changelog of that package are generated from
-the files of the repository (see `Other/Build/Build.py`), so the repository keeps one single readme, one single
-license and one single changelog instead of copies which would drift apart.
+This codeunit is a library, so it has no platform-target: `Other/Build/Build.py` calls
+`tf.build("mat_darkmode_toggle_button", [])` and the build-result is the sourcecode (`SourceCode` and
+`BuildResult_SourceCode` in `Other/Artifacts`).
+
+What pub.dev expects beside the sourcecode is a readme and a license. Those are the `ReadMe.md` of the codeunit and
+the `License.txt` of the repository; they are deliberately not maintained a second time inside the flutter-package.
+Packing them into the published package is done by the build as soon as ScriptCollection offers the corresponding
+option for a flutter-codeunit, so if that option exists, set it at the `tf.build(...)`-call instead of implementing
+the packing in this repository.
