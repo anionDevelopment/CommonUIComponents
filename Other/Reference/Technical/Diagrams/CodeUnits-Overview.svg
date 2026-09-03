@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="190px" preserveAspectRatio="none" style="width:769px;height:190px;background:#FFFFFF;" version="1.1" viewBox="0 0 769 190" width="769px" zoomAndPan="magnify">
+  <defs />
+  <g>
+    <g class="title" data-source-line="2">
+      <text fill="#000000" font-family="'DejaVu Sans'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="259.5811" x="251.6841" y="22.9951">CodeUnits of MatCultureSelector</text>
+    </g>
+    <g class="entity" data-qualified-name="MatCultureSelector" data-source-line="4" id="ent0001">
+      <rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="174.9277" x="293" y="44.2969" />
+      <rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="447.9277" y="49.2969" />
+      <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="445.9277" y="51.2969" />
+      <rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="445.9277" y="55.2969" />
+      <text fill="#000000" font-family="'DejaVu Sans'" font-size="14" lengthAdjust="spacing" textLength="134.9277" x="308" y="77.292">MatCultureSelector</text>
+    </g>
+    <g class="entity" data-qualified-name="MatCultureSelectorNote" data-source-line="6" id="ent0002">
+      <path d="M6,150.2969 L6,175.4297 A0,0 0 0 0 6,175.4297 L754.9492,175.4297 A0,0 0 0 0 754.9492,175.4297 L754.9492,160.2969 L744.9492,150.2969 L384.5,150.2969 L380.5,90.4569 L376.5,150.2969 L6,150.2969 A0,0 0 0 0 6,150.2969" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" />
+      <path d="M744.9492,150.2969 L744.9492,160.2969 L754.9492,160.2969 L744.9492,150.2969" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" />
+      <text fill="#000000" font-family="'DejaVu Sans'" font-size="13" lengthAdjust="spacing" textLength="727.9492" x="12" y="167.3638">mat_culture_selector is a flutter-widget which lets the user choose a culture from a configurable list of cultures.</text>
+    </g>
+  </g>
+</svg>

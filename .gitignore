@@ -1,0 +1,48 @@
+# See https://dart.dev/guides/libraries/private-files for more about ignoring files.
+
+# Python-caches of the build-scripts
+__pycache__/
+
+# Build- and tool-output of dart and flutter
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+*.iml
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+Other/Resources/Artifacts
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/*.lock
+Other/Logs
