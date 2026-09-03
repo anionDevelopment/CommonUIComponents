@@ -1,0 +1,12 @@
+@startuml CodeUnits-Overview
+skinparam defaultFontName "DejaVu Sans"
+title CodeUnits of MatCultureSelector
+
+[MatCultureSelector]
+note as MatCultureSelectorNote
+  mat_culture_selector is a flutter-widget which lets the user choose a culture from a configurable list of cultures.
+end note
+MatCultureSelector .. MatCultureSelectorNote
+
+
+@enduml

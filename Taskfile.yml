@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+
+  BaseBuildAllCodeunits:
+    desc: "Base: Build all codeunits"
+    silent: true
+    dir: "."
+    cmds:
+      - "scbuildcodeunits {{.CLI_ARGS}}"
+    aliases:
+      - basebuildallcodeunits
+      - bb
+
+  RunDemo:
+    desc: "Run: Demo"
+    silent: true
+    dir: "./MatCultureSelector/mat_culture_selector/example"
+    cmds:
+      - "flutter run -d chrome {{.CLI_ARGS}}"
+    aliases:
+      - rundemo
+      - rd
+
+  UpdateVisualRegressionBaselines:
+    desc: "Update: Visual-regression-baselines"
+    silent: true
+    dir: "./MatCultureSelector/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselines
+      - uvrb
