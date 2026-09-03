@@ -32,6 +32,19 @@
           "rd"
         ],
         "allowcustomarguments": true
+      },
+      {
+        "label": "Update: Visual-regression-baselines",
+        "command": "python UpdateVisualRegressionBaselines.py",
+        "args": [],
+        "type": "shell",
+        "options": {
+          "cwd": "${workspaceFolder}/NgxCultureSelector/Other/QualityCheck"
+        },
+        "aliases": [
+          "uvrb"
+        ],
+        "allowcustomarguments": true
       }
     ]
   },
