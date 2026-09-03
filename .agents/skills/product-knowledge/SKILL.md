@@ -71,8 +71,9 @@ This codeunit is a library, so it has no platform-target: `Other/Build/Build.py`
 `tf.build("mat_darkmode_toggle_button", [])` and the build-result is the sourcecode (`SourceCode` and
 `BuildResult_SourceCode` in `Other/Artifacts`).
 
-What pub.dev expects beside the sourcecode is a readme and a license. Those are the `ReadMe.md` of the codeunit and
-the `License.txt` of the repository; they are deliberately not maintained a second time inside the flutter-package.
-Packing them into the published package is done by the build as soon as ScriptCollection offers the corresponding
-option for a flutter-codeunit, so if that option exists, set it at the `tf.build(...)`-call instead of implementing
-the packing in this repository.
+What pub.dev expects beside the sourcecode is a readme, a license and a changelog. Those are the `ReadMe.md` of the
+codeunit, the `License.txt` of the repository and `Other/Resources/Changelog`; the three `True`-arguments of the
+`tf.build(...)`-call let ScriptCollection put them into the package of the sourcecode-artifacts. They are
+deliberately not maintained a second time inside the flutter-package, and the packing is deliberately not
+implemented in this repository. For the same reason the links of the codeunit-readme are relative: the build makes
+them absolute, because pub.dev does not show the readme in the context of the repository.

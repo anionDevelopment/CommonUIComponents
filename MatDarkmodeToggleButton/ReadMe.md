@@ -14,12 +14,10 @@ This package is the flutter-equivalent of [ngx-darkmode-toggle-button](https://g
 
 ## Example
 
-![The widget in the mode light](https://raw.githubusercontent.com/anionDev/MatDarkmodeToggleButton/main/Other/Reference/Technical/Images/ToggleButtonLight.png)
-![The widget in the mode dark](https://raw.githubusercontent.com/anionDev/MatDarkmodeToggleButton/main/Other/Reference/Technical/Images/ToggleButtonDark.png)
+![The widget in the mode light](../Other/Reference/Technical/Images/ToggleButtonLight.png)
+![The widget in the mode dark](../Other/Reference/Technical/Images/ToggleButtonDark.png)
 
 The three modes are visible at the same time and the active one is highlighted. In the mode `dark` the same page is dark and the third button is the highlighted one.
-
-The addresses of these two images are absolute on purpose: this readme is also the readme of the published package, and on pub.dev it is not shown in the context of the repository, so a relative address could not be resolved there and the images would stay invisible.
 
 ## Requirements
 
