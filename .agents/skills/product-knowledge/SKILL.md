@@ -63,10 +63,12 @@ example-application in a browser; `task uvrb` regenerates the baseline-images af
 appearance.
 
 The build has no compiled result: a dart-package is published as sourcecode. `Other/Build/Build.py` therefore
-only completes the sourcecode-artifacts with the readme and the license of the repository (pub.dev shows the
-readme of a package on its page and requires the license to be part of the package) and makes the links of that
-readme absolute, because pub.dev does not show it in the context of the repository. So the repository keeps one
-single readme instead of a second one which would drift.
+builds no target and only sets the options with which ScriptCollection puts the readme of the code-unit
+(`MatCultureSelector/ReadMe.md`), the license of the repository and its changelog (`Other/Resources/Changelog`,
+rendered as one section per version) into the sourcecode-artifacts and makes the links of that readme absolute -
+pub.dev shows the readme and the changelog of a package on its page, expects the license to be part of the package
+and does not show that readme in the context of the repository. So the code-unit keeps one single readme and the
+repository one single changelog, instead of a second copy inside the package which would drift apart from it.
 
 The widget-tests (`mat_culture_selector/test`) assert the state of the widget partly through the
 `DropdownButton` it is built on (which value it shows, which entries it offers) instead of through the rendered

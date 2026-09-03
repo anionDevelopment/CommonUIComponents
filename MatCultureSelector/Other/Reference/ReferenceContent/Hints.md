@@ -53,4 +53,4 @@ After an intended change of the appearance the baseline-images have to be regene
 
 ## Usage
 
-The usage of the package is documented in the `ReadMe.md` of the repository.
+The usage of the package is documented in the `ReadMe.md` of this codeunit, which is also what pub.dev shows on the page of the package.
