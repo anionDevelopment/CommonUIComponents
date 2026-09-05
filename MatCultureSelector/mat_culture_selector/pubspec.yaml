@@ -1,0 +1,32 @@
+name: mat_culture_selector
+description: "A flutter-widget which lets the user choose a culture from a configurable list of cultures, based on material design."
+version: 0.1.1
+repository: https://github.com/anionDev/MatCultureSelector
+homepage: https://github.com/anionDev/MatCultureSelector
+issue_tracker: https://github.com/anionDev/MatCultureSelector/issues
+topics:
+  - culture
+  - locale
+  - i18n
+  - internationalization
+  - dropdown
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 5.0.0
+  # Only used by the visual-regression-tests (see "test/visual_regression/visual_regression.dart"), which compare
+  # the rendered widget with its baseline-image.
+  image: 4.9.2
+  path: 1.9.1
+
+flutter:
+  uses-material-design: true
