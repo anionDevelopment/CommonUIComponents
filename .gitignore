@@ -1,0 +1,13 @@
+# Ignores which belong to the repository as a whole. Everything which belongs to the code-unit is ignored in
+# "MatCountrySelector/.gitignore" respectively in "MatCountrySelector/Other/.gitignore".
+
+# Build-artifacts of the repository, written by the build-pipeline
+Other/Resources/Artifacts
+
+# Logs of the repository
+Other/Logs
+
+# Local, machine-specific configuration
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/*.lock
