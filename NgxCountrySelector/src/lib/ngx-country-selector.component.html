@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>{{ label() }}</mat-label>
+  <mat-select [value]="selectedCountry()" (selectionChange)="onSelectionChange($event)">
+    @for (country of countries(); track country.code) {
+    <mat-option [value]="country.code">{{ labelOf(country) }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
