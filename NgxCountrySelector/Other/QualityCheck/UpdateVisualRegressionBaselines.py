@@ -15,12 +15,12 @@ def update_readme_pictures(tf: TFCPS_CodeUnitSpecific_NodeJS_Functions) -> None:
     """
     Copies the reference-images which the visual-regression-testcases wrote while the baselines were regenerated
     into the readme image location. The testcases run inside the playwright-container, which only has the
-    codeunit-folder mounted and can therefore not write into the repository-level "Other"-folder directly; this
-    is the step which moves the images there. The images themselves already show only the component (see
+    codeunit-folder mounted and writes them into its artifacts-folder; this is the step which moves them to
+    where the readme references them. The images themselves already show only the component (see
     "saveReferenceImage" in "e2e/support/VisualRegression.ts"), so no cropping is done here.
     """
     source_folder: str = os.path.join(tf.get_artifacts_folder(), "ReferenceImages")
-    target_folder: str = os.path.join(tf.get_repository_folder(), "Other", "Reference", "Technical", "Images")
+    target_folder: str = os.path.join(tf.get_codeunit_folder(), "Other", "Reference", "Technical", "Images")
     os.makedirs(target_folder, exist_ok=True)
     for source_name, target_name in _reference_images.items():
         source_path: str = os.path.join(source_folder, f"{source_name}.png")
