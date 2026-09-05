@@ -23,7 +23,7 @@ def update_readme_pictures(tf: TFCPS_CodeUnitSpecific_Flutter_Functions) -> None
     as the appearance changes, while this one can not drift apart from what the tests assert.
     """
     source_folder: str = os.path.join(tf.get_codeunit_folder(), "Other", "Resources", "VisualRegressionBaselines")
-    target_folder: str = os.path.join(tf.get_repository_folder(), "Other", "Reference", "Technical", "Images")
+    target_folder: str = os.path.join(tf.get_codeunit_folder(), "Other", "Reference", "Technical", "Images")
     os.makedirs(target_folder, exist_ok=True)
     for source_name, target_name in _baseline_images_for_the_readme.items():
         source_path: str = os.path.join(source_folder, f"{source_name}.png")

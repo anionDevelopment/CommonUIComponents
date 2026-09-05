@@ -10,8 +10,8 @@ Applications which are available in several languages or regional variants usual
 
 ## Example
 
-![The widget closed, showing the currently chosen culture](../Other/Reference/Technical/Images/CultureSelectorClosed.png)
-![The widget with its dropdown open, listing the four cultures of the example above](../Other/Reference/Technical/Images/CultureSelectorOpen.png)
+![The widget closed, showing the currently chosen culture](Other/Reference/Technical/Images/CultureSelectorClosed.png)
+![The widget with its dropdown open, listing the four cultures of the example above](Other/Reference/Technical/Images/CultureSelectorOpen.png)
 
 The closed control always shows the label of the currently chosen culture. Tapping it opens a dropdown which lists the label of every culture that was passed in - this is the native behavior of the underlying material-widgets and needs no further code.
 
