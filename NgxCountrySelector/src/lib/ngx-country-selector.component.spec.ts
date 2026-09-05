@@ -36,7 +36,7 @@ describe('allCountries', () => {
   });
 
   it('gives every country its own code', () => {
-    const codes: Set<string> = new Set(allCountries.map((country) => country.code));
+    const codes = new Set<string>(allCountries.map((country) => country.code));
 
     expect(codes.size).toBe(allCountries.length);
   });
