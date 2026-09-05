@@ -1,0 +1,42 @@
+@startuml CodeUnits-Overview
+skinparam defaultFontName "DejaVu Sans"
+title CodeUnits of CommonUIComponents
+
+[MatCountrySelector]
+note as MatCountrySelectorNote
+  mat_country_selector is a flutter-widget which lets the user choose a country, shown with its flag and its english name.
+end note
+MatCountrySelector .. MatCountrySelectorNote
+
+[MatCultureSelector]
+note as MatCultureSelectorNote
+  mat_culture_selector is a flutter-widget which lets the user choose a culture from a configurable list of cultures.
+end note
+MatCultureSelector .. MatCultureSelectorNote
+
+[MatDarkmodeToggleButton]
+note as MatDarkmodeToggleButtonNote
+  mat_darkmode_toggle_button is a flutter-widget which lets the user choose between the color-schemes system, light and dark.
+end note
+MatDarkmodeToggleButton .. MatDarkmodeToggleButtonNote
+
+[NgxCountrySelector]
+note as NgxCountrySelectorNote
+  ngx-country-selector is an angular-component which lets the user choose a country, shown with its flag and its english name.
+end note
+NgxCountrySelector .. NgxCountrySelectorNote
+
+[NgxCultureSelector]
+note as NgxCultureSelectorNote
+  ngx-culture-selector is an angular-component which lets the user choose a culture from a configurable list of cultures.
+end note
+NgxCultureSelector .. NgxCultureSelectorNote
+
+[NgxDarkmodeToggleButton]
+note as NgxDarkmodeToggleButtonNote
+  ngx-darkmode-toggle-button is an angular-component which lets the user choose between the color-schemes system, light and dark.
+end note
+NgxDarkmodeToggleButton .. NgxDarkmodeToggleButtonNote
+
+
+@enduml
