@@ -12,11 +12,11 @@ def build() -> None:
 
 
 def update_artifact(tf: TFCPS_CodeUnitSpecific_NodeJS_Functions) -> None:
-    """Puts the readme and the license of the repository into the built npm-package.
+    """Puts the readme of the codeunit and the license of the repository into the built npm-package.
 
     npmjs.com shows the readme which is contained in the package on the page of the package, and ng-packagr only
-    takes a readme which lies beside its "ng-package.json". Doing it here means that the repository keeps one
-    single readme instead of a second one which would have to be maintained in parallel and would drift apart."""
+    takes a readme which lies beside its "ng-package.json". Doing it here means that the codeunit keeps one single
+    readme instead of a second one which would have to be maintained in parallel and would drift apart."""
 
     # The folder which "ng-package.json" writes the npm-package to.
     npm_package_artifact_name: str = "BuildResult_NPMPackage"
@@ -39,8 +39,8 @@ def update_artifact(tf: TFCPS_CodeUnitSpecific_NodeJS_Functions) -> None:
     # Example: "https://github.com/anionDev/NgxDarkmodeToggleButton" becomes
     # "https://raw.githubusercontent.com/anionDev/NgxDarkmodeToggleButton/main/".
     address_of_raw_files: str = f"{tf.get_remote_address().replace('https://github.com/', 'https://raw.githubusercontent.com/')}/{branch_of_published_state}/"
-    readme_content: str = GeneralUtilities.read_text_from_file(os.path.join(repository_folder, "ReadMe.md"))
-    readme_content = readme_content.replace("](Other/", f"]({address_of_raw_files}Other/")
+    readme_content: str = GeneralUtilities.read_text_from_file(os.path.join(tf.get_codeunit_folder(), "ReadMe.md"))
+    readme_content = readme_content.replace("](Other/", f"]({address_of_raw_files}{tf.get_codeunit_name()}/Other/")
     GeneralUtilities.write_text_to_file(os.path.join(package_folder, name_of_readme_in_package), readme_content)
 
     shutil.copyfile(os.path.join(repository_folder, "License.txt"), os.path.join(package_folder, name_of_license_in_package))
