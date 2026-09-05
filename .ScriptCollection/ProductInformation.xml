@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<productinformation xmlns="https://projects.aniondev.de/PublicProjects/Common/ProjectTemplates/-/tree/main/Conventions/RepositoryStructure/CommonProjectStructure">
+  <producttitle>MatCountrySelector</producttitle>
+  <remoteaddress>https://github.com/anionDev/MatCountrySelector</remoteaddress>
+  <requiredenvironmentvariables />
+</productinformation>
