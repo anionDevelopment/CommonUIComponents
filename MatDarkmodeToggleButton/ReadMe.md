@@ -14,8 +14,8 @@ This package is the flutter-equivalent of [ngx-darkmode-toggle-button](https://g
 
 ## Example
 
-![The widget in the mode light](../Other/Reference/Technical/Images/ToggleButtonLight.png)
-![The widget in the mode dark](../Other/Reference/Technical/Images/ToggleButtonDark.png)
+![The widget in the mode light](Other/Reference/Technical/Images/ToggleButtonLight.png)
+![The widget in the mode dark](Other/Reference/Technical/Images/ToggleButtonDark.png)
 
 The three modes are visible at the same time and the active one is highlighted. In the mode `dark` the same page is dark and the third button is the highlighted one.
 

@@ -21,7 +21,7 @@ def update_readme_pictures(tf: TFCPS_CodeUnitSpecific_Flutter_Functions) -> None
     "_saveReferenceImage" in "test/visual_regression/visual_regression.dart"), so no cropping is done here.
     """
     source_folder: str = os.path.join(tf.get_artifacts_folder(), "ReferenceImages")
-    target_folder: str = os.path.join(tf.get_repository_folder(), "Other", "Reference", "Technical", "Images")
+    target_folder: str = os.path.join(tf.get_codeunit_folder(), "Other", "Reference", "Technical", "Images")
     GeneralUtilities.ensure_directory_exists(target_folder)
     for source_name, target_name in _reference_images.items():
         source_path: str = os.path.join(source_folder, f"{source_name}.png")
