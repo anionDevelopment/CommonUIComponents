@@ -1,0 +1,133 @@
+version: '3'
+
+tasks:
+
+  BaseBuildAllCodeunits:
+    desc: "Base: Build all codeunits"
+    silent: true
+    dir: "."
+    cmds:
+      - "scbuildcodeunits {{.CLI_ARGS}}"
+    aliases:
+      - basebuildallcodeunits
+      - bb
+
+  RunDemoOfMatcountryselector:
+    desc: "Run: Demo of MatCountrySelector"
+    silent: true
+    dir: "./MatCountrySelector/mat_country_selector/example"
+    cmds:
+      - "flutter run -d chrome {{.CLI_ARGS}}"
+    aliases:
+      - rundemoofmatcountryselector
+      - rdmatcountry
+
+  RunDemoOfMatcultureselector:
+    desc: "Run: Demo of MatCultureSelector"
+    silent: true
+    dir: "./MatCultureSelector/mat_culture_selector/example"
+    cmds:
+      - "flutter run -d chrome {{.CLI_ARGS}}"
+    aliases:
+      - rundemoofmatcultureselector
+      - rdmatculture
+
+  RunDemoOfMatdarkmodetogglebutton:
+    desc: "Run: Demo of MatDarkmodeToggleButton"
+    silent: true
+    dir: "./MatDarkmodeToggleButton/mat_darkmode_toggle_button/example"
+    cmds:
+      - "flutter run -d chrome {{.CLI_ARGS}}"
+    aliases:
+      - rundemoofmatdarkmodetogglebutton
+      - rdmatdarkmode
+
+  RunDemoOfNgxcountryselector:
+    desc: "Run: Demo of NgxCountrySelector"
+    silent: true
+    dir: "./NgxCountrySelector"
+    cmds:
+      - "npm run start {{.CLI_ARGS}}"
+    aliases:
+      - rundemoofngxcountryselector
+      - rdngxcountry
+
+  RunDemoOfNgxcultureselector:
+    desc: "Run: Demo of NgxCultureSelector"
+    silent: true
+    dir: "./NgxCultureSelector"
+    cmds:
+      - "npm run start {{.CLI_ARGS}}"
+    aliases:
+      - rundemoofngxcultureselector
+      - rdngxculture
+
+  RunDemoOfNgxdarkmodetogglebutton:
+    desc: "Run: Demo of NgxDarkmodeToggleButton"
+    silent: true
+    dir: "./NgxDarkmodeToggleButton"
+    cmds:
+      - "npm run start {{.CLI_ARGS}}"
+    aliases:
+      - rundemoofngxdarkmodetogglebutton
+      - rdngxdarkmode
+
+  UpdateVisualRegressionBaselinesOfMatcountryselector:
+    desc: "Update: Visual-regression-baselines of MatCountrySelector"
+    silent: true
+    dir: "./MatCountrySelector/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselinesofmatcountryselector
+      - uvrbmatcountry
+
+  UpdateVisualRegressionBaselinesOfMatcultureselector:
+    desc: "Update: Visual-regression-baselines of MatCultureSelector"
+    silent: true
+    dir: "./MatCultureSelector/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselinesofmatcultureselector
+      - uvrbmatculture
+
+  UpdateVisualRegressionBaselinesOfMatdarkmodetogglebutton:
+    desc: "Update: Visual-regression-baselines of MatDarkmodeToggleButton"
+    silent: true
+    dir: "./MatDarkmodeToggleButton/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselinesofmatdarkmodetogglebutton
+      - uvrbmatdarkmode
+
+  UpdateVisualRegressionBaselinesOfNgxcountryselector:
+    desc: "Update: Visual-regression-baselines of NgxCountrySelector"
+    silent: true
+    dir: "./NgxCountrySelector/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselinesofngxcountryselector
+      - uvrbngxcountry
+
+  UpdateVisualRegressionBaselinesOfNgxcultureselector:
+    desc: "Update: Visual-regression-baselines of NgxCultureSelector"
+    silent: true
+    dir: "./NgxCultureSelector/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselinesofngxcultureselector
+      - uvrbngxculture
+
+  UpdateVisualRegressionBaselinesOfNgxdarkmodetogglebutton:
+    desc: "Update: Visual-regression-baselines of NgxDarkmodeToggleButton"
+    silent: true
+    dir: "./NgxDarkmodeToggleButton/Other/QualityCheck"
+    cmds:
+      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
+    aliases:
+      - updatevisualregressionbaselinesofngxdarkmodetogglebutton
+      - uvrbngxdarkmode

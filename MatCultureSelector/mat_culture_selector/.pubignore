@@ -1,0 +1,11 @@
+# Defines what is not part of the package which is published to pub.dev. It replaces the ".gitignore" of this
+# folder for publishing, so everything that file ignores has to be repeated here.
+.dart_tool/
+pubspec.lock
+/build/
+/coverage/
+
+# The visual-regression-tests compare the rendered widget with baseline-images which are stored at codeunit-level
+# (see "Other/Resources/VisualRegressionBaselines" of the codeunit) and are executed by the build-pipeline of the
+# repository only. Both the tests and the baselines they need are therefore of no use inside the published package.
+test/visual_regression/

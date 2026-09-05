@@ -1,0 +1,34 @@
+name: mat_darkmode_toggle_button
+description: "A flutter-widget which lets the user choose the color-scheme of an application between the three modes system, light and dark."
+version: 0.1.1
+homepage: https://github.com/anionDev/NgxCultureSelector
+repository: https://github.com/anionDev/NgxCultureSelector
+issue_tracker: https://github.com/anionDev/NgxCultureSelector/issues
+topics:
+  - theme
+  - dark-mode
+  - material
+  - widget
+  - settings
+
+environment:
+  sdk: ^3.9.0
+  flutter: '>=3.35.0'
+
+# The versions here are ranges and not exact versions, unlike the dev-dependencies below: this package is
+# published to pub.dev, so an exact version would force every application which uses it to use exactly that
+# version too and would collide with every other package which depends on the same one.
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.5.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 6.0.0
+  # Used by the visual-regression-tests to compare a screenshot with its baseline-image.
+  image: 4.9.2
+  path: 1.9.1
+
+flutter:
