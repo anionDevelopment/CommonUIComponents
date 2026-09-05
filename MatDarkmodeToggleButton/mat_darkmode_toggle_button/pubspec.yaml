@@ -1,9 +1,9 @@
 name: mat_darkmode_toggle_button
 description: "A flutter-widget which lets the user choose the color-scheme of an application between the three modes system, light and dark."
 version: 0.1.1
-homepage: https://github.com/anionDev/MatDarkmodeToggleButton
-repository: https://github.com/anionDev/MatDarkmodeToggleButton
-issue_tracker: https://github.com/anionDev/MatDarkmodeToggleButton/issues
+homepage: https://github.com/anionDev/NgxCultureSelector
+repository: https://github.com/anionDev/NgxCultureSelector
+issue_tracker: https://github.com/anionDev/NgxCultureSelector/issues
 topics:
   - theme
   - dark-mode

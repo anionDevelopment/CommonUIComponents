@@ -1,9 +1,9 @@
 name: mat_country_selector
 description: "A flutter-widget which lets the user choose a country from the countries of ISO 3166-1, shown with their flag and their english name, based on material design."
 version: 0.1.1
-repository: https://github.com/anionDev/MatCountrySelector
-homepage: https://github.com/anionDev/MatCountrySelector
-issue_tracker: https://github.com/anionDev/MatCountrySelector/issues
+repository: https://github.com/anionDev/NgxCultureSelector
+homepage: https://github.com/anionDev/NgxCultureSelector
+issue_tracker: https://github.com/anionDev/NgxCultureSelector/issues
 topics:
   - country
   - iso-3166

@@ -1,9 +1,9 @@
 name: mat_culture_selector
 description: "A flutter-widget which lets the user choose a culture from a configurable list of cultures, based on material design."
 version: 0.1.1
-repository: https://github.com/anionDev/MatCultureSelector
-homepage: https://github.com/anionDev/MatCultureSelector
-issue_tracker: https://github.com/anionDev/MatCultureSelector/issues
+repository: https://github.com/anionDev/NgxCultureSelector
+homepage: https://github.com/anionDev/NgxCultureSelector
+issue_tracker: https://github.com/anionDev/NgxCultureSelector/issues
 topics:
   - culture
   - locale

@@ -10,7 +10,7 @@ Apps and applications usually have a light- and a dark-appearance, and the opera
 
 A two-state switch can not express that: it only knows "light" and "dark" and therefore loses exactly the mode which most users want. This widget therefore offers all three modes at the same time, each of them reachable with one tap.
 
-This package is the flutter-equivalent of [ngx-darkmode-toggle-button](https://github.com/anionDev/NgxDarkmodeToggleButton), which does the same for angular-applications.
+This package is the flutter-equivalent of [ngx-darkmode-toggle-button](https://www.npmjs.com/package/@aniondev/ngx-darkmode-toggle-button), which does the same for angular-applications.
 
 ## Example
 

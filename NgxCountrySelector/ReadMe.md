@@ -14,7 +14,7 @@ The flags are not pictures. A flag-emoji is the two letters of the country-code 
 
 A country is found by typing its name: `mat-select` jumps to the option whose text starts with the typed letters while the list is open, which is what keeps a list of almost 250 entries usable.
 
-It is the angular-counterpart of [MatCountrySelector](https://github.com/anionDev/MatCountrySelector), which offers the same thing for flutter-applications.
+It is the angular-counterpart of [mat_country_selector](https://pub.dev/packages/mat_country_selector), which offers the same thing for flutter-applications.
 
 ## Example
 
