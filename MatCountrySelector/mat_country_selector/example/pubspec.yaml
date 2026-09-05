@@ -1,0 +1,20 @@
+name: mat_country_selector_example
+description: "An application which shows the country-selector of the package mat_country_selector."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mat_country_selector:
+    path: ../
+
+dev_dependencies:
+  flutter_lints: 5.0.0
+
+flutter:
+  uses-material-design: true
