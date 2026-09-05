@@ -1,6 +1,6 @@
 {
   "name": "@aniondev/ngx-country-selector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An angular-component which lets the user choose a country from the countries of ISO 3166-1, shown with their flag and their english name.",
   "scripts": {
     "build": "npm run build-QualityCheck",

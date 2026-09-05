@@ -1,0 +1,8 @@
+<main>
+  <h1>Country</h1>
+  <p>Choose a country. The list holds every country of ISO 3166-1, because no list was passed to the component.</p>
+  <ngx-country-selector (countrySelected)="onCountrySelected($event)"></ngx-country-selector>
+  @if (chosenCountry) {
+  <p>Chosen country: {{ chosenCountry }}</p>
+  }
+</main>
