@@ -1,0 +1,14 @@
+Artifacts
+Resources/TestCoverageBadges/**
+!Resources/TestCoverageBadges/badge_shieldsio_linecoverage_blue.svg
+Reference/obj
+Resources/DependentCodeUnits
+Resources/Constants
+Resources/Constants/CodeUnitMajorVersion.*
+Resources/Constants/CodeUnitDescription.*
+Resources/Constants/CodeUnitName.*
+Resources/Constants/CodeUnitVersion.*
+Resources/Constants/CommitDate.*
+Resources/Constants/CommitId.*
+Resources/Constants/CurrentTimestamp.*
+Resources/CodeAnalysisResult/*.sarif

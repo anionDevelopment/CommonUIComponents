@@ -1,0 +1,25 @@
+name: mat_darkmode_toggle_button_example
+description: "Demo-application which shows the widget of the package mat_darkmode_toggle_button."
+# This application is only here to be looked at and to be run; it is not a product of its own.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+  flutter: '>=3.35.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # The package this example demonstrates. It is used from the source-code beside it and not from pub.dev, so
+  # that the example always shows the current state of the package and not the last published one.
+  mat_darkmode_toggle_button:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 6.0.0
+
+flutter:
+  uses-material-design: true
