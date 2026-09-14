@@ -32,7 +32,7 @@ describe('allCountries', () => {
 
   it('holds the countries of ISO 3166-1', () => {
     expect(allCountries.length).toBe(249);
-    expect(allCountries).toContain({ code: 'DE', name: 'Germany' });
+    expect(allCountries).toContainEqual({ code: 'DE', name: 'Germany' });
   });
 
   it('gives every country its own code', () => {
