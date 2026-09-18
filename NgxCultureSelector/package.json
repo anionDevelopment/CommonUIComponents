@@ -33,7 +33,7 @@
     "select",
     "ui"
   ],
-  "author": "Marius G\u00f6cke <marius.goecke@gmail.com>",
+  "author": "Marius Göcke <marius.goecke@gmail.com>",
   "license": "ISC",
   "private": false,
   "publishConfig": {
@@ -65,6 +65,7 @@
     "@angular/platform-browser": "22.1.1",
     "@angular/platform-browser-dynamic": "22.1.1",
     "@fontsource/roboto": "^5.3.0",
+    "@noble/hashes": "^1.8.0",
     "@playwright/test": "1.62.1",
     "@vitest/coverage-istanbul": "4.1.11",
     "angular-eslint": "22.2.0",
