@@ -21,6 +21,7 @@ describe('flagOf', () => {
 
   it('has no flag for something which is not a two-letter-code', () => {
     expect(flagOf('GER')).toBe('');
+    expect(flagOf('1!')).toBe('');
   });
 
   it('shows a country as its flag and its english name', () => {
