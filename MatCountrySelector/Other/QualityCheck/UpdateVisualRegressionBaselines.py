@@ -7,8 +7,8 @@ from VisualRegressionContainer import run_visual_regression_tests
 # Maps the name a testcase gives its baseline-image (see "test/visual_regression/mat_country_selector_test.dart")
 # to the filename it gets in the readme.
 _baseline_images_for_the_readme: dict[str, str] = {
-    "country_selector_closed": "CountrySelectorClosed.png",
-    "country_selector_open": "CountrySelectorOpen.png",
+    "light-country_selector_closed": "CountrySelectorClosed.png",
+    "light-country_selector_open": "CountrySelectorOpen.png",
 }
 
 

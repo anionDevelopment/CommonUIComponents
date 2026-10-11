@@ -15,10 +15,10 @@ const List<MatCultureOption> _cultures = <MatCultureOption>[
 
 /// Builds an application which shows nothing but the culture-selector, so that the resulting picture is usable as
 /// the example-picture of the readme without being cropped afterwards.
-Widget _applicationWithTheCultureSelector() {
+Widget _applicationWithTheCultureSelector(ThemeData theme) {
   return MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: ThemeData(colorSchemeSeed: Colors.blue, fontFamily: 'Roboto'),
+    theme: theme,
     home: Scaffold(
       body: Center(
         child: SizedBox(
@@ -38,9 +38,9 @@ void main() {
   testWidgets(
     'the closed culture-selector looks like its baseline',
     (WidgetTester tester) async {
-      await expectWidgetToLookLikeBaseline(
+      await expectWidgetToLookLikeBaselineInBothThemes(
         tester,
-        _applicationWithTheCultureSelector(),
+        _applicationWithTheCultureSelector,
         'culture_selector_closed',
         surfaceSize: const Size(400, 140),
       );
@@ -51,9 +51,9 @@ void main() {
   testWidgets(
     'the opened culture-selector looks like its baseline',
     (WidgetTester tester) async {
-      await expectWidgetToLookLikeBaseline(
+      await expectWidgetToLookLikeBaselineInBothThemes(
         tester,
-        _applicationWithTheCultureSelector(),
+        _applicationWithTheCultureSelector,
         'culture_selector_open',
         // The dropdown is rendered above the closed control and needs the room for all of its entries, so this
         // surface is higher than the one of the closed control.

@@ -72,62 +72,12 @@ tasks:
       - rundemoofngxdarkmodetogglebutton
       - rdngxdarkmode
 
-  UpdateVisualRegressionBaselinesOfMatcountryselector:
-    desc: "Update: Visual-regression-baselines of MatCountrySelector"
+  UpdateVisualRegressionBaselines:
+    desc: "Update: Visual-regression-baselines"
     silent: true
-    dir: "./MatCountrySelector/Other/QualityCheck"
+    dir: "./Other/Scripts"
     cmds:
       - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
     aliases:
-      - updatevisualregressionbaselinesofmatcountryselector
-      - uvrbmatcountry
-
-  UpdateVisualRegressionBaselinesOfMatcultureselector:
-    desc: "Update: Visual-regression-baselines of MatCultureSelector"
-    silent: true
-    dir: "./MatCultureSelector/Other/QualityCheck"
-    cmds:
-      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
-    aliases:
-      - updatevisualregressionbaselinesofmatcultureselector
-      - uvrbmatculture
-
-  UpdateVisualRegressionBaselinesOfMatdarkmodetogglebutton:
-    desc: "Update: Visual-regression-baselines of MatDarkmodeToggleButton"
-    silent: true
-    dir: "./MatDarkmodeToggleButton/Other/QualityCheck"
-    cmds:
-      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
-    aliases:
-      - updatevisualregressionbaselinesofmatdarkmodetogglebutton
-      - uvrbmatdarkmode
-
-  UpdateVisualRegressionBaselinesOfNgxcountryselector:
-    desc: "Update: Visual-regression-baselines of NgxCountrySelector"
-    silent: true
-    dir: "./NgxCountrySelector/Other/QualityCheck"
-    cmds:
-      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
-    aliases:
-      - updatevisualregressionbaselinesofngxcountryselector
-      - uvrbngxcountry
-
-  UpdateVisualRegressionBaselinesOfNgxcultureselector:
-    desc: "Update: Visual-regression-baselines of NgxCultureSelector"
-    silent: true
-    dir: "./NgxCultureSelector/Other/QualityCheck"
-    cmds:
-      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
-    aliases:
-      - updatevisualregressionbaselinesofngxcultureselector
-      - uvrbngxculture
-
-  UpdateVisualRegressionBaselinesOfNgxdarkmodetogglebutton:
-    desc: "Update: Visual-regression-baselines of NgxDarkmodeToggleButton"
-    silent: true
-    dir: "./NgxDarkmodeToggleButton/Other/QualityCheck"
-    cmds:
-      - "python UpdateVisualRegressionBaselines.py {{.CLI_ARGS}}"
-    aliases:
-      - updatevisualregressionbaselinesofngxdarkmodetogglebutton
-      - uvrbngxdarkmode
+      - updatevisualregressionbaselines
+      - uvrb

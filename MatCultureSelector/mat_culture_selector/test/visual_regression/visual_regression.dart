@@ -24,7 +24,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart' as img;
 import 'package:path/path.dart' as path;
@@ -141,6 +141,33 @@ Future<void> expectWidgetToLookLikeBaseline(
       '"task UpdateVisualRegressionBaselines".',
     );
   }
+}
+
+/// The light- and the dark-theme every scenario is rendered in. This widget is a library-component and has no
+/// colors of its own - it takes them from the application which embeds it (see its ReadMe.md) - so a baseline only
+/// needs *some* light- and *some* dark-theme to show it the way a light- and a dark-application would. A default
+/// color-scheme from an arbitrary seed is enough for that; the same seed is used as in the other components of this
+/// repository, so the example-pictures look like they belong together.
+final ThemeData visualRegressionLightTheme = ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue), fontFamily: 'Roboto');
+final ThemeData visualRegressionDarkTheme =
+    ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark), fontFamily: 'Roboto');
+
+/// Renders what [buildApplication] returns for the light- and for the dark-theme and asserts each looks like its
+/// baseline-image, named `light-<baselineName>` respectively `dark-<baselineName>`. The widget takes its colors
+/// from the theme it is given, so the two images show the same widget as a light- and as a dark-application embeds
+/// it. Between the two runs the widget-tree is torn down (a neutral widget is pumped) so the dark run starts fresh
+/// instead of updating the light run's tree in place.
+Future<void> expectWidgetToLookLikeBaselineInBothThemes(
+  WidgetTester tester,
+  Widget Function(ThemeData theme) buildApplication,
+  String baselineName, {
+  required Size surfaceSize,
+  Future<void> Function(WidgetTester tester)? interact,
+}) async {
+  await expectWidgetToLookLikeBaseline(tester, buildApplication(visualRegressionLightTheme), 'light-$baselineName', surfaceSize: surfaceSize, interact: interact);
+  await tester.pumpWidget(const SizedBox.shrink());
+  await tester.pumpAndSettle();
+  await expectWidgetToLookLikeBaseline(tester, buildApplication(visualRegressionDarkTheme), 'dark-$baselineName', surfaceSize: surfaceSize, interact: interact);
 }
 
 int _countDifferentPixels(img.Image rendered, img.Image baseline) {

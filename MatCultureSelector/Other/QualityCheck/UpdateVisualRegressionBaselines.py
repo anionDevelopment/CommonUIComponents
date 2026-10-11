@@ -7,8 +7,8 @@ from VisualRegressionContainer import run_visual_regression_tests
 # Maps the name a testcase gives its baseline-image (see "test/visual_regression/mat_culture_selector_test.dart")
 # to the filename it gets in the readme.
 _baseline_images_for_the_readme: dict[str, str] = {
-    "culture_selector_closed": "CultureSelectorClosed.png",
-    "culture_selector_open": "CultureSelectorOpen.png",
+    "light-culture_selector_closed": "CultureSelectorClosed.png",
+    "light-culture_selector_open": "CultureSelectorOpen.png",
 }
 
 
