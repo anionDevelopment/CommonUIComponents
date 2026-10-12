@@ -1,6 +1,5 @@
 from ScriptCollection.GeneralUtilities import GeneralUtilities
 from ScriptCollection.TFCPS.Flutter.TFCPS_CodeUnitSpecific_Flutter import TFCPS_CodeUnitSpecific_Flutter_Functions, TFCPS_CodeUnitSpecific_Flutter_CLI
-from VisualRegressionContainer import run_visual_regression_tests
 import os
 import shutil
 
@@ -32,7 +31,7 @@ def update_readme_pictures(tf: TFCPS_CodeUnitSpecific_Flutter_Functions) -> None
 
 def update_visual_regression_baselines() -> None:
     tf: TFCPS_CodeUnitSpecific_Flutter_Functions = TFCPS_CodeUnitSpecific_Flutter_CLI.parse(__file__)
-    run_visual_regression_tests(tf, True)
+    tf.run_visual_regression_tests_in_container("mat_darkmode_toggle_button", True)
     update_readme_pictures(tf)
 
 

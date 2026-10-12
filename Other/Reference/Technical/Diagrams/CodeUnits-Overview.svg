@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" data-diagram-type="DESCRIPTION" style="width:5119px;height:190px;background:#FFFFFF;" width="5119px" height="190px" viewBox="0 0 5119 190" zoomAndPan="magnify" preserveAspectRatio="none" contentStyleType="text/css">
+  <defs />
+  <g font-family="sans-serif" lengthAdjust="spacing">
+    <g class="title" data-source-line="2">
+      <text x="2411.27" y="22.995" fill="#000" font-size="14" textLength="289.83" font-weight="700" font-family="'DejaVu Sans'">CodeUnits of CommonUIComponents</text>
+    </g>
+    <g class="entity" data-qualified-name="MatCountrySelector" id="ent0001" data-source-line="4">
+      <rect x="315.61" y="44.297" width="179.275" height="46.297" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5" />
+      <rect x="474.885" y="49.297" width="15" height="10" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="472.885" y="51.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="472.885" y="55.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <text x="330.61" y="77.292" fill="#000" font-size="14" textLength="139.275" font-family="'DejaVu Sans'">MatCountrySelector</text>
+    </g>
+    <g class="entity" data-qualified-name="MatCountrySelectorNote" id="ent0002" data-source-line="6">
+      <path d="M6,150.597 L6,175.73 A0,0 0 0 0 6,175.73 L804.486,175.73 A0,0 0 0 0 804.486,175.73 L804.486,160.597 L794.486,150.597 L409.24,150.597 L405.24,90.657 L401.24,150.597 L6,150.597 A0,0 0 0 0 6,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <path d="M794.486,150.597 L794.486,160.597 L804.486,160.597 L794.486,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <text x="12" y="167.664" fill="#000" font-size="13" textLength="777.486" font-family="'DejaVu Sans'">mat_country_selector is a flutter-widget which lets the user choose a country, shown with its flag and its english name.</text>
+    </g>
+    <g class="entity" data-qualified-name="MatCultureSelector" id="ent0004" data-source-line="10">
+      <rect x="1126.78" y="44.297" width="174.928" height="46.297" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5" />
+      <rect x="1281.708" y="49.297" width="15" height="10" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="1279.708" y="51.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="1279.708" y="55.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <text x="1141.78" y="77.292" fill="#000" font-size="14" textLength="134.928" font-family="'DejaVu Sans'">MatCultureSelector</text>
+    </g>
+    <g class="entity" data-qualified-name="MatCultureSelectorNote" id="ent0005" data-source-line="12">
+      <path d="M839.77,150.597 L839.77,175.73 A0,0 0 0 0 839.77,175.73 L1588.719,175.73 A0,0 0 0 0 1588.719,175.73 L1588.719,160.597 L1578.719,150.597 L1218.24,150.597 L1214.24,90.657 L1210.24,150.597 L839.77,150.597 A0,0 0 0 0 839.77,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <path d="M1578.719,150.597 L1578.719,160.597 L1588.719,160.597 L1578.719,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <text x="845.77" y="167.664" fill="#000" font-size="13" textLength="727.949" font-family="'DejaVu Sans'">mat_culture_selector is a flutter-widget which lets the user choose a culture from a configurable list of cultures.</text>
+    </g>
+    <g class="entity" data-qualified-name="MatDarkmodeToggleButton" id="ent0007" data-source-line="16">
+      <rect x="1932.56" y="44.297" width="233.361" height="46.297" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5" />
+      <rect x="2145.921" y="49.297" width="15" height="10" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="2143.921" y="51.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="2143.921" y="55.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <text x="1947.56" y="77.292" fill="#000" font-size="14" textLength="193.361" font-family="'DejaVu Sans'">MatDarkmodeToggleButton</text>
+    </g>
+    <g class="entity" data-qualified-name="MatDarkmodeToggleButtonNote" id="ent0008" data-source-line="18">
+      <path d="M1623.43,150.597 L1623.43,175.73 A0,0 0 0 0 1623.43,175.73 L2475.065,175.73 A0,0 0 0 0 2475.065,175.73 L2475.065,160.597 L2465.065,150.597 L2053.24,150.597 L2049.24,90.657 L2045.24,150.597 L1623.43,150.597 A0,0 0 0 0 1623.43,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <path d="M2465.065,150.597 L2465.065,160.597 L2475.065,160.597 L2465.065,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <text x="1629.43" y="167.664" fill="#000" font-size="13" textLength="830.635" font-family="'DejaVu Sans'">mat_darkmode_toggle_button is a flutter-widget which lets the user choose between the color-schemes system, light and dark.</text>
+    </g>
+    <g class="entity" data-qualified-name="NgxCountrySelector" id="ent0010" data-source-line="22">
+      <rect x="2839.86" y="44.297" width="180.772" height="46.297" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5" />
+      <rect x="3000.632" y="49.297" width="15" height="10" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="2998.632" y="51.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="2998.632" y="55.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <text x="2854.86" y="77.292" fill="#000" font-size="14" textLength="140.772" font-family="'DejaVu Sans'">NgxCountrySelector</text>
+    </g>
+    <g class="entity" data-qualified-name="NgxCountrySelectorNote" id="ent0011" data-source-line="24">
+      <path d="M2509.78,150.597 L2509.78,175.73 A0,0 0 0 0 2509.78,175.73 L3350.7,175.73 A0,0 0 0 0 3350.7,175.73 L3350.7,160.597 L3340.7,150.597 L2934.24,150.597 L2930.24,90.657 L2926.24,150.597 L2509.78,150.597 A0,0 0 0 0 2509.78,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <path d="M3340.7,150.597 L3340.7,160.597 L3350.7,160.597 L3340.7,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <text x="2515.78" y="167.664" fill="#000" font-size="13" textLength="819.92" font-family="'DejaVu Sans'">ngx-country-selector is an angular-component which lets the user choose a country, shown with its flag and its english name.</text>
+    </g>
+    <g class="entity" data-qualified-name="NgxCultureSelector" id="ent0013" data-source-line="28">
+      <rect x="3693.03" y="44.297" width="176.425" height="46.297" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5" />
+      <rect x="3849.455" y="49.297" width="15" height="10" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="3847.455" y="51.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="3847.455" y="55.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <text x="3708.03" y="77.292" fill="#000" font-size="14" textLength="136.425" font-family="'DejaVu Sans'">NgxCultureSelector</text>
+    </g>
+    <g class="entity" data-qualified-name="NgxCultureSelectorNote" id="ent0014" data-source-line="30">
+      <path d="M3385.55,150.597 L3385.55,175.73 A0,0 0 0 0 3385.55,175.73 L4176.933,175.73 A0,0 0 0 0 4176.933,175.73 L4176.933,160.597 L4166.933,150.597 L3785.24,150.597 L3781.24,90.657 L3777.24,150.597 L3385.55,150.597 A0,0 0 0 0 3385.55,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <path d="M4166.933,150.597 L4166.933,160.597 L4176.933,160.597 L4166.933,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <text x="3391.55" y="167.664" fill="#000" font-size="13" textLength="770.383" font-family="'DejaVu Sans'">ngx-culture-selector is an angular-component which lets the user choose a culture from a configurable list of cultures.</text>
+    </g>
+    <g class="entity" data-qualified-name="NgxDarkmodeToggleButton" id="ent0016" data-source-line="34">
+      <rect x="4540.81" y="44.297" width="234.858" height="46.297" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2.5" ry="2.5" />
+      <rect x="4755.668" y="49.297" width="15" height="10" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="4753.668" y="51.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <rect x="4753.668" y="55.297" width="4" height="2" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" />
+      <text x="4555.81" y="77.292" fill="#000" font-size="14" textLength="194.858" font-family="'DejaVu Sans'">NgxDarkmodeToggleButton</text>
+    </g>
+    <g class="entity" data-qualified-name="NgxDarkmodeToggleButtonNote" id="ent0017" data-source-line="36">
+      <path d="M4212.11,150.597 L4212.11,175.73 A0,0 0 0 0 4212.11,175.73 L5104.37,175.73 A0,0 0 0 0 5104.37,175.73 L5104.37,160.597 L5094.37,150.597 L4662.24,150.597 L4658.24,90.657 L4654.24,150.597 L4212.11,150.597 A0,0 0 0 0 4212.11,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <path d="M5094.37,150.597 L5094.37,160.597 L5104.37,160.597 L5094.37,150.597" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD" />
+      <text x="4218.11" y="167.664" fill="#000" font-size="13" textLength="871.26" font-family="'DejaVu Sans'">ngx-darkmode-toggle-button is an angular-component which lets the user choose between the color-schemes system, light and dark.</text>
+    </g>
+  </g>
+</svg>

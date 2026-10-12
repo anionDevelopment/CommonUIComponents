@@ -6,8 +6,8 @@ import shutil
 # Maps the name a testcase gives its reference-image (see "saveReferenceImage" in "e2e/support/VisualRegression.ts")
 # to the filename it gets in the readme.
 _reference_images: dict[str, str] = {
-    "culture-selector-closed": "CultureSelectorClosed.png",
-    "culture-selector-open": "CultureSelectorOpen.png",
+    "culture-selector-closed-light": "CultureSelectorClosed.png",
+    "culture-selector-open-light": "CultureSelectorOpen.png",
 }
 
 

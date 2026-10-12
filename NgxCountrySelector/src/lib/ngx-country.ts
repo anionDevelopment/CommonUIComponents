@@ -26,7 +26,7 @@ export interface NgxCountry {
  * Something which is not a two-letter-code has no flag; the result is an empty text then.
  */
 export function flagOf(code: string): string {
-  if (code.length !== 2) {
+  if (!/^[A-Za-z]{2}$/.test(code)) {
     return '';
   }
   const firstRegionalIndicator = 0x1f1e6;

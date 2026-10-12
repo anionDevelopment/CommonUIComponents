@@ -34,15 +34,15 @@
         "allowcustomarguments": true
       },
       {
-        "label": "Update: Visual-regression-baselines of MatCountrySelector",
+        "label": "Update: Visual-regression-baselines",
         "command": "python UpdateVisualRegressionBaselines.py",
         "args": [],
         "type": "shell",
         "options": {
-          "cwd": "${workspaceFolder}/MatCountrySelector/Other/QualityCheck"
+          "cwd": "${workspaceFolder}/Other/Scripts"
         },
         "aliases": [
-          "uvrb-mat-country"
+          "uvrb"
         ],
         "allowcustomarguments": true
       },
@@ -60,19 +60,6 @@
         "allowcustomarguments": true
       },
       {
-        "label": "Update: Visual-regression-baselines of MatCultureSelector",
-        "command": "python UpdateVisualRegressionBaselines.py",
-        "args": [],
-        "type": "shell",
-        "options": {
-          "cwd": "${workspaceFolder}/MatCultureSelector/Other/QualityCheck"
-        },
-        "aliases": [
-          "uvrb-mat-culture"
-        ],
-        "allowcustomarguments": true
-      },
-      {
         "label": "Run: Demo of MatDarkmodeToggleButton",
         "command": "flutter run -d chrome",
         "args": [],
@@ -82,19 +69,6 @@
         },
         "aliases": [
           "rd-mat-darkmode"
-        ],
-        "allowcustomarguments": true
-      },
-      {
-        "label": "Update: Visual-regression-baselines of MatDarkmodeToggleButton",
-        "command": "python UpdateVisualRegressionBaselines.py",
-        "args": [],
-        "type": "shell",
-        "options": {
-          "cwd": "${workspaceFolder}/MatDarkmodeToggleButton/Other/QualityCheck"
-        },
-        "aliases": [
-          "uvrb-mat-darkmode"
         ],
         "allowcustomarguments": true
       },
@@ -112,19 +86,6 @@
         "allowcustomarguments": true
       },
       {
-        "label": "Update: Visual-regression-baselines of NgxCountrySelector",
-        "command": "python UpdateVisualRegressionBaselines.py",
-        "args": [],
-        "type": "shell",
-        "options": {
-          "cwd": "${workspaceFolder}/NgxCountrySelector/Other/QualityCheck"
-        },
-        "aliases": [
-          "uvrb-ngx-country"
-        ],
-        "allowcustomarguments": true
-      },
-      {
         "label": "Run: Demo of NgxCultureSelector",
         "command": "npm run start",
         "args": [],
@@ -138,19 +99,6 @@
         "allowcustomarguments": true
       },
       {
-        "label": "Update: Visual-regression-baselines of NgxCultureSelector",
-        "command": "python UpdateVisualRegressionBaselines.py",
-        "args": [],
-        "type": "shell",
-        "options": {
-          "cwd": "${workspaceFolder}/NgxCultureSelector/Other/QualityCheck"
-        },
-        "aliases": [
-          "uvrb-ngx-culture"
-        ],
-        "allowcustomarguments": true
-      },
-      {
         "label": "Run: Demo of NgxDarkmodeToggleButton",
         "command": "npm run start",
         "args": [],
@@ -160,19 +108,6 @@
         },
         "aliases": [
           "rd-ngx-darkmode"
-        ],
-        "allowcustomarguments": true
-      },
-      {
-        "label": "Update: Visual-regression-baselines of NgxDarkmodeToggleButton",
-        "command": "python UpdateVisualRegressionBaselines.py",
-        "args": [],
-        "type": "shell",
-        "options": {
-          "cwd": "${workspaceFolder}/NgxDarkmodeToggleButton/Other/QualityCheck"
-        },
-        "aliases": [
-          "uvrb-ngx-darkmode"
         ],
         "allowcustomarguments": true
       }

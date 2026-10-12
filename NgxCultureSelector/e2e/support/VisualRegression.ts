@@ -71,15 +71,18 @@ async function saveReferenceImage(page: Page, name: string, area: Box): Promise<
 }
 
 /*
- * Opens the demo-application, optionally opens the dropdown of the culture-selector, and compares the
- * resulting screenshot with the baseline of the current browser and operating-system. The tolerance of the
- * comparison is defined in playwright.config.ts.
+ * Opens the demo-application in the given color-scheme ('light' or 'dark'), optionally opens the dropdown of the
+ * culture-selector, and compares the resulting screenshot with the baseline of the current browser and
+ * operating-system. The tolerance of the comparison is defined in playwright.config.ts.
  *
- * Unlike the theme-switcher of ngx-darkmode-toggle-button this component has no persisted state to write
- * before the page is loaded: its only state ("is the dropdown open") is purely interactive, so it is reached
- * by clicking the control after the page has loaded.
+ * The culture-selector has no colors of its own - it takes them from the application which embeds it - so it is
+ * shown once in a light- and once in a dark-application, the same way the other components of this repository are.
+ * The scheme is applied with "emulateMedia": the demo-application follows "prefers-color-scheme" (see its
+ * "color-scheme: light dark"), so this is all a user with that system-setting would have. Unlike the theme-switcher
+ * of ngx-darkmode-toggle-button this component has no persisted state of its own to write; its only state ("is the
+ * dropdown open") is purely interactive and is reached by clicking the control after the page has loaded.
  */
-export async function expectDemoToLookLikeBaseline(page: Page, openDropdown: boolean, baselineName: string): Promise<void> {
+export async function expectDemoToLookLikeBaseline(page: Page, mode: 'light' | 'dark', openDropdown: boolean, baselineName: string): Promise<void> {
     /*
      * An error of the application makes it render nothing, and a screenshot of an empty page still is a valid
      * image which is then accepted as the new baseline. Therefore the errors of the page are collected and
@@ -93,6 +96,7 @@ export async function expectDemoToLookLikeBaseline(page: Page, openDropdown: boo
         }
     });
 
+    await page.emulateMedia({ colorScheme: mode });
     await page.goto('/');
     await page.evaluate(() => document.fonts.ready);
     await page.waitForFunction((font: string) => document.fonts.check(font), requiredFont);
@@ -127,7 +131,10 @@ export async function expectDemoToLookLikeBaseline(page: Page, openDropdown: boo
 
     expect(errorsOfPage, `The page reported errors: ${errorsOfPage.join(' | ')}`).toEqual([]);
 
-    await saveReferenceImage(page, baselineName, referenceImageArea);
+    /* The readme shows one picture per state; the light one is used for it (the dark render is only a baseline). */
+    if (mode === 'light') {
+        await saveReferenceImage(page, baselineName, referenceImageArea);
+    }
 
     await expect(page).toHaveScreenshot(`${baselineName}.png`, {
         fullPage: true,

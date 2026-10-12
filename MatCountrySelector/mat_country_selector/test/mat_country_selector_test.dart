@@ -55,6 +55,7 @@ void main() {
 
     test('has no flag for something which is not a two-letter-code', () {
       expect(const MatCountry(code: 'GER', name: 'Germany').flag, '');
+      expect(const MatCountry(code: '1!', name: 'Germany').flag, '');
     });
 
     test('is shown as its flag and its english name', () {

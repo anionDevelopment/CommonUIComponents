@@ -16,7 +16,7 @@
       "prefix": "ngx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "project": "ng-package.json"
           },
@@ -34,22 +34,29 @@
           "defaultConfiguration": "Productive"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "codeCoverage": true,
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "runner": "vitest",
+            "runnerConfig": "vitest-base.config.ts",
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "karmaConfig": "karma.conf.js"
+            "coverage": true,
+            "coverageReporters": [
+              "cobertura",
+              "text-summary"
+            ]
           },
           "configurations": {
-            "Development": {},
-            "QualityCheck": {},
-            "Productive": {}
-          }
+            "Development": {
+              "buildTarget": "ngx-country-selector:build:Development"
+            },
+            "QualityCheck": {
+              "buildTarget": "ngx-country-selector:build:QualityCheck"
+            },
+            "Productive": {
+              "buildTarget": "ngx-country-selector:build:Productive"
+            }
+          },
+          "defaultConfiguration": "QualityCheck"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",

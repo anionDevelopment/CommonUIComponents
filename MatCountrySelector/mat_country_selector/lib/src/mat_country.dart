@@ -21,7 +21,7 @@ class MatCountry {
   /// licensed, nothing has to be updated when a flag changes, and a country whose flag a system does not know
   /// simply shows the two letters instead of a broken image.
   String get flag {
-    if (code.length != 2) {
+    if (!_twoLetterCode.hasMatch(code)) {
       return '';
     }
     return String.fromCharCodes(code.toUpperCase().codeUnits.map((letter) => _firstRegionalIndicator + letter - _a));
@@ -32,6 +32,7 @@ class MatCountry {
 
   static const int _firstRegionalIndicator = 0x1f1e6;
   static const int _a = 0x41;
+  static final RegExp _twoLetterCode = RegExp(r'^[A-Za-z]{2}$');
 
   @override
   bool operator ==(Object other) => other is MatCountry && other.code == code && other.name == name;
