@@ -1,0 +1,5 @@
+[codespell]
+# package-lock.json files are auto-generated and contain base64-encoded
+# integrity hashes (e.g. "...6gZ+bU+WyI..." or "...DG7RKL/vEw...") which
+# codespell misinterprets as typos. These files should not be spell-checked.
+skip = package-lock.json
