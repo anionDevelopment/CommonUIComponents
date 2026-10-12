@@ -2,7 +2,6 @@ import os
 import shutil
 
 from ScriptCollection.TFCPS.Flutter.TFCPS_CodeUnitSpecific_Flutter import TFCPS_CodeUnitSpecific_Flutter_Functions, TFCPS_CodeUnitSpecific_Flutter_CLI
-from VisualRegressionContainer import run_visual_regression_tests
 
 # Maps the name a testcase gives its baseline-image (see "test/visual_regression/mat_country_selector_test.dart")
 # to the filename it gets in the readme.
@@ -34,7 +33,7 @@ def update_readme_pictures(tf: TFCPS_CodeUnitSpecific_Flutter_Functions) -> None
 
 def update_visual_regression_baselines() -> None:
     tf: TFCPS_CodeUnitSpecific_Flutter_Functions = TFCPS_CodeUnitSpecific_Flutter_CLI.parse(__file__)
-    run_visual_regression_tests(tf, True)
+    tf.run_visual_regression_tests_in_container("mat_country_selector", True)
     update_readme_pictures(tf)
 
 
