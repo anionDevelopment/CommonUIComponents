@@ -1,5 +1,6 @@
 ImageName;UpstreamRegistryAddress;DefaultTag
-SCBuilder;aniondev/scbuilder;v1.2.13
+SCBuilder;aniondev/scbuilder;v1.2.19
 Betterleaks;ghcr.io/betterleaks/betterleaks;v1.4.1
 Playwright;mcr.microsoft.com/playwright;v1.62.1-noble
 PlantUML;plantuml/plantuml;1.2026.8
+Squid;ubuntu/squid;7.2-26.04_edge
