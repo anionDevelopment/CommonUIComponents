@@ -36,8 +36,8 @@ def update_artifact(tf: TFCPS_CodeUnitSpecific_NodeJS_Functions) -> None:
     # one of the example-screenshot) can not be resolved there and the image would stay invisible. Therefore the
     # links which point into the repository are made absolute. The address is taken from the
     # product-information-file, so that a rename of the repository does not have to be repeated here.
-    # Example: "https://github.com/anionDev/NgxCultureSelector" becomes
-    # "https://raw.githubusercontent.com/anionDev/NgxCultureSelector/main/".
+    # Example: "https://github.com/anionDevelopment/CommonUIComponents" becomes
+    # "https://raw.githubusercontent.com/anionDevelopment/CommonUIComponents/main/".
     address_of_raw_files: str = f"{tf.get_remote_address().replace('https://github.com/', 'https://raw.githubusercontent.com/')}/{branch_of_published_state}/"
     readme_content: str = GeneralUtilities.read_text_from_file(os.path.join(tf.get_codeunit_folder(), "ReadMe.md"))
     readme_content = readme_content.replace("](Other/", f"]({address_of_raw_files}{tf.get_codeunit_name()}/Other/")

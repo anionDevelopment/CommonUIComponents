@@ -17,7 +17,7 @@ The closed control always shows the label of the currently chosen culture. Tappi
 
 ## Requirements
 
-- Flutter 3.24 or newer
+- Flutter 3.32 or newer
 - Material design (the widget is built on `DropdownButton` and `InputDecorator`)
 
 ## Installation
