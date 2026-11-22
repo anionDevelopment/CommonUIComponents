@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anionDev/NgxCultureSelector.git"
+    "url": "git+https://github.com/anionDevelopment/CommonUIComponents.git"
   },
-  "homepage": "https://github.com/anionDev/NgxCultureSelector#readme",
+  "homepage": "https://github.com/anionDevelopment/CommonUIComponents#readme",
   "bugs": {
-    "url": "https://github.com/anionDev/NgxCultureSelector/issues"
+    "url": "https://github.com/anionDevelopment/CommonUIComponents/issues"
   },
   "keywords": [
     "angular",
